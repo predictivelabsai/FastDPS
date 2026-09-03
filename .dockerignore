@@ -1,0 +1,16 @@
+.env
+.git
+.github
+.playwright-cli
+.pytest_cache
+.ruff_cache
+.venv
+__pycache__
+*.pyc
+*.sqlite*
+build
+data
+docs/demo/frames
+fastdps.egg-info
+output
+test-results

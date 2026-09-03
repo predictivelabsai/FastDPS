@@ -1,0 +1,23 @@
+services:
+  fastdps:
+    build: .
+    ports:
+      - "5024:5024"
+    environment:
+      FASTDPS_SECRET: ${FASTDPS_SECRET:-local-compose-change-me}
+      FASTDPS_PUBLIC_URL: ${FASTDPS_PUBLIC_URL:-http://localhost:5024}
+      FASTDPS_ENV_LABEL: ${FASTDPS_ENV_LABEL:-Docker}
+      FASTDPS_ALLOW_TEST_AUTH: ${FASTDPS_ALLOW_TEST_AUTH:-true}
+      DB_URL: ${DB_URL:-}
+      DB_SCHEMA: ${DB_SCHEMA:-fast_dps}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      GOOGLE_REDIRECT_URI: ${GOOGLE_REDIRECT_URI:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_BASE_URL: ${LLM_BASE_URL:-https://api.openai.com/v1}
+      LLM_MODEL: ${LLM_MODEL:-}
+    volumes:
+      - fastdps_data:/data
+
+volumes:
+  fastdps_data:

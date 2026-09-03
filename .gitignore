@@ -216,3 +216,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# FastDPS local runtime state
+.sesskey
+data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+uploads/
+test-results/
+.playwright-cli/
+output/playwright/

@@ -1,0 +1,93 @@
+# FastDPS product roadmap
+
+Status date: 2026-09-02
+
+This file deliberately uses a portable text format despite the `.doc`
+extension requested for the project. It can be read, diffed, and reviewed
+without proprietary office software.
+
+## Release 0.1 — implemented foundation
+
+Status: engineering complete in the local repository.
+
+- Chat-first responsive workspace with conversation history, a central chat,
+  typed server-sent events, and a structured artifact panel.
+- White public landing page, top-right sign-in, local accounts, passwordless
+  opt-in demonstration access, and Google OpenID Connect configuration points.
+- Multi-organisation membership and tenant-scoped access.
+- Dynamic role names and rights with nine seeded roles, a fixed permission
+  catalogue, role editing and assignment, expiring invitations, privilege
+  grant boundaries, and last-owner protection.
+- Configurable workflow-definition, step, and transition schema with default
+  DPS, admission, and call-off workflows and administration API operations.
+- Complete DPS lifecycle: systems, categories, qualification criteria,
+  publication, closure, and archive states.
+- Two-sided supplier lifecycle: supplier profiles, continuously open admission
+  applications, reviews, admission decisions, suspensions, and call-off
+  invitations.
+- Competition lifecycle: submissions, weighted criteria, conflict declarations,
+  evaluation scores, award approval/publication, and contract creation.
+- Versioned, content-hashed document storage and download controls.
+- Append-only audit events plus notification, comment, outbox, and idempotent
+  webhook-receipt foundations.
+- OCDS release/package import, canonical storage, searchable projection, DPS
+  export, and optional pinned TED/Doffin eForms conversion.
+- SQLite default, additive migrations, bounded PostgreSQL adapter and schema
+  support, health endpoint, FastAPI/OpenAPI, Docker, Compose, and CI.
+- Automated tests for migrations, lifecycle invariants, RBAC and tenant
+  boundaries, invitation acceptance, chat confirmations, OCDS idempotency,
+  document versions, CSRF, core pages, and API discovery.
+
+## Release 0.2 — production hardening follow-up
+
+These items require deployment credentials, external service selection, legal
+policy input, or representative operational data and are therefore the next
+follow-up rather than hidden local assumptions.
+
+- Run and certify the optional PostgreSQL parity suite against the supplied
+  managed database; add native indexes informed by real query plans.
+- Configure the production domain, TLS, stable session secret, Google callback,
+  identity allowlists, backup policy, encrypted persistent storage, and runtime
+  observability.
+- Add outbound invitation and notification delivery after an email provider is
+  selected; process the existing transactional outbox with retry and dead-letter
+  visibility.
+- Add antivirus scanning, file-type inspection, retention, and object-storage
+  adapters for production evidence.
+- Add scheduled notice acquisition connectors after the exact TED/Doffin feeds,
+  cadence, terms, and completeness expectations are confirmed. XML upload and
+  conversion already work through the same ingestion boundary.
+- Validate one optional EU-style policy profile with procurement counsel while
+  retaining the jurisdiction-neutral core. Legal rules must remain versioned
+  configuration rather than application constants.
+- Expand workflow administration from API-first editing into a visual workflow
+  designer with transition validation and impact previews.
+- Add supplier co-worker invitations and granular supplier-side permissions.
+- Add evaluation moderation, consensus scoring, moderation notes, standstill
+  dates, notices, and contract-performance milestones.
+- Add accessibility audit, localization framework, performance budgets, and
+  independent security review.
+
+## Release 0.3 — ecosystem and intelligence follow-up
+
+- Background indexing and retrieval over approved procurement documents.
+- Additional conversational tools for completeness checks, aggregate evaluation
+  summaries, timeline risk, and OCDS data-quality explanations. Governed chat
+  actions already cover DPS/category/criterion creation, publication, supplier
+  decisions, competitions, scoring, awards, contracts, and notice search.
+- Human-reviewed templates and policy packs distributed separately from the
+  neutral core.
+- Signed webhooks, SCIM, additional OIDC providers, and suite-to-suite API
+  contracts.
+- Public transparency views, release-package history, and configurable open-data
+  publication endpoints.
+- Operational dashboards for supplier participation, admission throughput,
+  competition cycle time, savings, and data quality.
+
+## Release gates
+
+Each release requires passing tests, migration replay on fresh and upgraded
+databases, tenant-isolation review, permission-matrix review, desktop and mobile
+browser checks, API contract review, secret scanning, and documentation updates.
+AI functionality cannot be promoted if it bypasses the same service, permission,
+confirmation, and audit controls used by non-chat workflows.
