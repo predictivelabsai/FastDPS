@@ -139,6 +139,7 @@ See [third-party notices](THIRD_PARTY_NOTICES.md).
 
 - Workspace: `/app`
 - Health: `/healthz`
+- Production health: `https://dps.fastsme.com/healthz`
 - API documentation: `/api/v1/docs`
 - OpenAPI schema: `/api/v1/openapi.json`
 
