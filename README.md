@@ -1,5 +1,7 @@
 # FastDPS
 
+[![Production](https://img.shields.io/badge/production-dps.fastsme.com-0f766e)](https://dps.fastsme.com)
+
 FastDPS is an open-source, chat-first dynamic purchasing system. It gives
 buying organisations a governed workspace for continuously admitting qualified
 suppliers, running call-off competitions, evaluating responses, approving
