@@ -38,7 +38,7 @@ def landing_page() -> Html:
     return Html(
         head("Open dynamic procurement", description, "/"),
         Body(
-            Header(logo(), Nav(A("Sign in", href="/login", cls="quiet-link"), A("Start locally", href="/signup", cls="button small")), cls="public-nav"),
+            Header(logo(), Nav(A("Pricing", href="#pricing", cls="quiet-link"), A("Sign in", href="/login", cls="quiet-link"), A("Start locally", href="/signup", cls="button small")), cls="public-nav"),
             Main(
                 Section(
                     Div(
@@ -62,6 +62,19 @@ def landing_page() -> Html:
                     Div(H2("Competitive call-offs"), P("Invite admitted suppliers, receive submissions, score transparently, and approve awards.")),
                     Div(H2("Chat with guardrails"), P("Draft and navigate conversationally. Every consequential action remains permission-checked and confirmed.")),
                     cls="feature-grid",
+                ),
+
+                Section(
+                    P("PRICING", cls="eyebrow"),
+                    H2("Simple pricing for every FastSME product."),
+                    P("Every Fast* product uses the same two options: bring your own cloud for free, or host with us for €1 per month."),
+                    Div(
+                        Article(P("BYOC", cls="eyebrow"), H3("Bring Your Own Cloud"), P(Strong("Free")), P("Self-host on your own infrastructure or cloud. Full control of data and upgrades. No per-seat platform fee.")),
+                        Article(P("HOSTED", cls="eyebrow"), H3("Host with us"), P(Strong("€1 / month")), P("We run the product for you on FastSME-managed infrastructure. €1 per product per month.")),
+                        cls="feature-grid",
+                    ),
+                    id="pricing",
+                    cls="open-source-block",
                 ),
                 Section(
                     P("PORTABLE BY DESIGN", cls="eyebrow"), H2("Your process, your data, your deployment."),
